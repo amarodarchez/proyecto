@@ -1,0 +1,4 @@
+buffet:
+    resource: "@MainBundle/Controller/"
+    type:     annotation
+    prefix:   /

@@ -1,0 +1,91 @@
+{% extends 'default.html.twig' %}
+
+{% set page =
+    {
+        "title": "Inicio",
+        "subtitle": "Dashboard",
+        "section": "Administracion"
+    }
+%}
+
+{% block breadcrumb %}
+    <li><a href=""><i class="fa fa-hashtag"></i>{{page.title}}</a></li>
+    <li class="active"> {{ page.subtitle }}</li>
+    {% endblock %}
+    {% block content %}
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <a href="{{ path('producto_new')}}">
+              <div class="small-box bg-blue" role="button" >
+                  <div class="inner">
+                      <h3>Producto</h3>
+                      <p>a proveedor</p>
+                  </div>
+                  <div class="icon">
+                      <i class="fa fa-indent "></i>
+                  </div>
+              </div>
+            </a>
+        </div>
+        <!-- ./col -->
+        <div class=" col-lg-3 col-xs-6">
+            <!-- small box -->
+            <a href="{{ path('categoria_new')}}">
+              <div class="small-box bg-blue" role="button" >
+                  <div class="inner">
+                      <h3>Categoria</h3>
+                      <p>a sector</p>
+                  </div>
+                  <div class="icon">
+                      <i class="fa fa-dedent"></i>
+                  </div>
+              </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <a href="{{ path('menudeldia_index') }}">
+              <div class="small-box bg-green" role="button" >
+                  <div class="inner">
+                      <h3>Menu</h3>
+                      <p>Ingresa para ver las estadísticas</p>
+                  </div>
+                  <div class="icon">
+                      <i class="fa  fa-area-chart"></i>
+                  </div>
+              </div>
+            </a>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <a href="{{ path('producto_index') }}">
+              <div class="small-box bg-red" role="button" >
+                  <div class="inner">
+
+                      <p>Productos en stock crítico</p>
+                  </div>
+                  <div class="icon">
+                      <i class="fa fa-exclamation-triangle"></i>
+                  </div>
+              </div>
+            </a>
+        </div>
+        <!-- ./col -->
+    </div>
+    <div class="box box-primary ">
+        <div class="box-header">
+            <h3 class="box-title">Lista de pedidos abiertos</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+          <div class="content">
+ 
+
+         
+          </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-12" id="loginCard">
+        <div class="account-wall">
+            <h1 class="text-center login-title">Ingresar</h1>
+            <form id="form-signin" action="{{ path('checkLogin') }}" method="POST" class="form-signin">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Nombre de usuario" required autofocus>
+                <input type="password" name="password" class="form-control" placeholder="Contrase&ntilde;a" required>
+                <button id="aceptarLogin" class="btn btn-lg btn-primary btn-block" type="submit">
+                    Ingresar</button>
+            </form>
+        <a href="{{ path('login') }}" class="text-center new-account">Crear una Cuenta </a>
+        <a href="#" class="text-center new-account">Olvid&eacute; mi contrase&ntilde;a</a>
+        </div>
+    </div>
+</div>
+{% include 'MainBundle:Utils:modal.html.twig' %}
+

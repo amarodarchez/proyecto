@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+    <div class="row">
+        <div class="col-sm-12 panel panel-default" style="margin-top: 5%;">
+            <form id="formRegistro" action="{{ path('saveRegistro') }}" method="POST">
+                <h1 class="text-center login-title">Registrarse</h1>
+                <div class="form-group">
+                    <label>Nombre de Usuario</label>
+                    <input class="form-control" type="text" id="usuario" name="user" placeholder="Nombre de Usuario" maxlength="45" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Apellido" maxlength="45" required>
+                </div>
+                <div class="form-group">
+                    <label>DNI</label>
+                    <input class="form-control" type="number" id="documento" name="dni" placeholder="DNI" maxlength="9" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" maxlength="255" required>
+                </div>
+                <div class="form-group">
+                    <label>Contrase&ntilde;a</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Contrase&ntilde;a" minlength="4" maxlength="45" required>
+                </div>
+                <div class="form-group">
+                    <label>Tel&eacute;fono</label>
+                    <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Tel&eacute;fono" maxlength="45" required>
+                </div>
+                <div class="form-group">
+                    <label>Lugar de trabajo</label>
+                    <select class="form-control" id="trabajo" name="trabajo" required>
+                        <option class="form-control" value="">Seleccione uno:</option>
+                        <option class="form-control" value="LIDI">LIDI</option>
+                        <option class="form-control" value="LIFIA">LIFIA</option>
+                        <option class="form-control" value="LINTI">LINTI</option>
+                    </select>
+                </div>
+
+                <input type="hidden" id="rol" name="rol" value="3">
+
+                <div class="form-group">
+                    <button id="aceptarNuevoRegistro" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+

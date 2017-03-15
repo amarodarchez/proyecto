@@ -1,0 +1,60 @@
+{% if page is not defined %}
+    {% set page = {"title": "Sistema de Control de Stock", "subtitle": "Hospital San Martin", "section": "null" } %}
+{% endif %}
+
+<li class="treeview" >
+    <a href="{{ path('home')}}">
+    <i class="fa  fa-tachometer "></i>
+      <span>Inicio</span>
+    </a>
+</li>
+<li class="treeview {% if page.title == "Producto" %} active {% endif %}" >
+    <a href="">
+    <i class="fa fa-indent"></i>
+      <span>Productos</span>
+    </a>
+    <ul class="treeview-menu">
+        <li ><a href="{{ path('producto_index')}}">Listar</a></li>
+        <li ><a href="{{ path('producto_new')}}">Crear</a></li>
+    </ul>
+</li>
+<li class="treeview  {% if page.title == "Venta" %} active {% endif %}" >
+    <a href="">
+    <i class="fa fa-dedent"></i>
+      <span>Ventas</span>
+    </a>
+    <ul class="treeview-menu">
+      <li ><a href="{{ path('categoria_index')}}">Listar</a></li>
+      <li ><a href="{{ path('categoria_new')}}">Crear</a></li>
+
+    </ul>
+</li>
+<li class="treeview {% if page.title == "Compra" %} active {% endif %}" >
+    <a href="{{ path('compra_index')}}">
+      <i class="fa fa-medkit "></i>
+      <span>Compras</span>
+    </a>
+    <span class="pull-right-container">
+    </span>
+    <ul class="treeview-menu">
+        <li ><a href="{{ path('compra_index')}}">Actualizar Stock</a></li>
+    </ul>
+</li>
+<li class="treeview  {% if page.title == "Menu" %} active {% endif %}" >
+    <a href="{{ path('menudeldia_index')}}">
+    <i class="fa fa-home "></i>
+      <span>Menu</span>
+    </a>
+</li>
+<li class="treeview  {% if page.title == "Usuario" %} active {% endif %}" >
+    <a href="{{ path('producto_index')}}">
+    <i class="fa  fa-cart-plus"></i>
+      <span>Usuarios</span>
+    </a>
+</li>
+<li class="treeview  {% if page.title == "Balance" %} active {% endif %}" >
+    <a href="{{ path('producto_index')}}">
+    <i class="fa  fa-area-chart"></i>
+      <span>Balance</span>
+    </a>
+</li>

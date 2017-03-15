@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Menudeldias list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Productoid</th>
+                <th>Fecha</th>
+                <th>Habilitado</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for menuDelDium in menuDelDias %}
+            <tr>
+                <td><a href="{{ path('menudeldia_show', { 'id': menuDelDium.id }) }}">{{ menuDelDium.id }}</a></td>
+                <td>{{ menuDelDium.productoId }}</td>
+                <td>{{ menuDelDium.fecha }}</td>
+                <td>{{ menuDelDium.habilitado }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('menudeldia_show', { 'id': menuDelDium.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('menudeldia_edit', { 'id': menuDelDium.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('menudeldia_new') }}">Create a new menuDelDium</a>
+        </li>
+    </ul>
+{% endblock %}

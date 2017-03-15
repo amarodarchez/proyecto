@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Sistema de Control de Stock</title>
+        {% block stylesheet %}
+            <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link type="text/css" rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap-theme.min.css') }}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('lib/adminlte/css/AdminLTE.min.css') }}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('lib/adminlte/css/skins/_all-skins.min.css') }}" />
+            <link type="text/css" rel="stylesheet" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" />
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" >
+        {% endblock stylesheet %}
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+    	{% include 'MainBundle:Utils:alerts.html.twig' %}
+        <div {% block removeWrapper %}class="wrapper"{% endblock %}>
+            {% block cleanHeader %}
+                <header class="main-header">
+                    <a href="{{ path('home') }}" class="logo">
+                        {% block logo %}{% endblock %}
+                    </a>
+                    <nav class="navbar navbar-static-top" >
+                        <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Cambiar navegación</span>
+                        </a>
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                {% block navbarCustomMenu %}{% endblock %}
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+
+                <aside class="main-sidebar">
+                    <div class="sidebar">
+                        {% block mainSidebar %}{% endblock %}
+                    </div>
+                </aside>
+            {% endblock %}
+
+            <div class="content-wrapper">
+                {% block contentWrapper %}{% endblock %}
+            </div>
+
+            {% block cleanFooter %}
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    {% include 'common_footer.html.twig' %}
+                </div>
+            </footer>
+
+
+            <aside class="control-sidebar control-sidebar-dark">
+                {% block controlSidebar %}{% endblock %}
+            </aside>
+            <div class="control-sidebar-bg"></div>
+            {% endblock %}
+        </div>
+        {% block javascript %}
+   			{% include 'common_scripts.html.twig' %}
+            <script type="text/javascript" src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('lib/adminlte/js/app.min.js') }}"></script>
+        {% endblock javascript %}
+        {% block script %} {% endblock %}
+    </div>
+    </body>
+</html>

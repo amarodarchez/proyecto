@@ -1,0 +1,38 @@
+{% if (productosCriticos is defined) and productosCriticos.cant > 0 %}
+<li class="dropdown notifications-menu">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <i class="fa fa-medkit"></i>
+    <span class="label label-danger">{{productosCriticos.cant}}</span>
+  </a>
+  <ul class="dropdown-menu">
+    <li class="header">Existen {{productosCriticos.cant}} productos con stock crítico</li>
+    <li>
+      <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+        {% for prod in productosCriticos.productos %}
+          <li>
+            <a href="{{path('producto_critical')}}">
+              <i class="fa fa-exclamation-circle text-red"></i> {{ prod.nombre }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul><div class="slimScrollBar" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 195.122px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+    </li>
+    <li class="footer"><a href="{{ path('producto_critical') }}">Ver Todos</a></li>
+  </ul>
+</li>
+{% endif %}
+<li class="dropdown user user-menu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <span class="hidden-xs">Administrador</span>
+      </a>
+    <ul class="dropdown-menu">
+        <li class="user-header">
+          <p>
+                hola administrador!
+              </p>
+        </li>
+        <li class="user-footer">
+                {# <a href="{{ path("fos_user_security_logout") }}" class="btn btn-default btn-flat">Cerrar sesión</a> #}
+        </li> 
+    </ul>
+</li>

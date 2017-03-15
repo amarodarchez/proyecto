@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Compra</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ compra.id }}</td>
+            </tr>
+            <tr>
+                <th>Proveedor</th>
+                <td>{{ compra.proveedor }}</td>
+            </tr>
+            <tr>
+                <th>Proveedorcuit</th>
+                <td>{{ compra.proveedorCuit }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ compra.fecha }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('compra_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('compra_edit', { 'id': compra.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

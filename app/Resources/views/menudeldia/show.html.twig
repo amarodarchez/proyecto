@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Menudeldium</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ menuDelDium.id }}</td>
+            </tr>
+            <tr>
+                <th>Productoid</th>
+                <td>{{ menuDelDium.productoId }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ menuDelDium.fecha }}</td>
+            </tr>
+            <tr>
+                <th>Habilitado</th>
+                <td>{{ menuDelDium.habilitado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('menudeldia_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('menudeldia_edit', { 'id': menuDelDium.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
